@@ -22,9 +22,9 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 local Window = Fluent:CreateWindow({
     Title = "chuida Hub",
     SubTitle = "join discord https://discord.com/invite/35HkXbS9",
-    TabWidth = 150,
-    Size = UDim2.fromOffset(530, 320),
-    Acrylic = false,
+    TabWidth = 160,
+    Size = UDim2.fromOffset(530, 380),
+    Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
 })

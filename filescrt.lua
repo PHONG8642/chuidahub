@@ -24,7 +24,7 @@ local Window = Fluent:CreateWindow({
     SubTitle = "join Discord https://discord.com/invite/35HkXbS9",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
-    Acrylic = true,
+    Acrylic = false,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
 })
@@ -2507,7 +2507,7 @@ ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton.TextSize = 14.000
 ToggleButton.Draggable = true
 ToggleButton.MouseButton1Click:Connect(function()
-	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,true,game)
+	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Remove Effect

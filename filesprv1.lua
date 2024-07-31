@@ -79,8 +79,8 @@ keyBox.ClipsDescendants = true
 keyBox.Position = UDim2.new(0.0184762254, 0, 0.327122301, 0)
 keyBox.Size = UDim2.new(0.982183516, 0, 0.686008453, 0)
 keyBox.Font = Enum.Font.Arial
-keyBox.PlaceholderText = "Example: chuida key"
-keyBox.Text = "0hdde141.txt"
+keyBox.PlaceholderText = "Example: HEBI_XXxxxxxxxxxxxxxx"
+keyBox.Text = ""
 keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 keyBox.TextSize = 14.000
 keyBox.TextXAlignment = Enum.TextXAlignment.Left
@@ -198,13 +198,13 @@ function Verify(key)
     local OnError = function() 
         Notify({
         Description = "Invalid Key!";
-        Title = "chuida Hub Gateway";
+        Title = "Hebi Hub Gateway";
         Duration = 5;
         });
         task.wait(0.5)
         Notify({
         Description = "Copied Key Link to Clipboard.";
-        Title = "chuida Hub Gateway";
+        Title = "Hebi Hub Gateway";
         Duration = 5;
         });
         setclipboard(GetLink())
@@ -213,13 +213,13 @@ function Verify(key)
     local OnInvalid = function() 
         Notify({
         Description = "Invalid Key!";
-        Title = "chuida Hub Gateway";
+        Title = "Hebi Hub Gateway";
         Duration = 5;
         });
         task.wait(0.5)
         Notify({
         Description = "Copied Key Link to Clipboard.";
-        Title = "chuida Hub Gateway";
+        Title = "Hebi Hub Gateway";
         Duration = 5;
         });
         setclipboard(GetLink())
@@ -240,7 +240,7 @@ if isfile("minhtientiny.txt") then
     local key = readfile("minhtientiny.txt")
     Notify({
     Description = "Checking Saved Key..";
-    Title = "chuida Hub Gateway";
+    Title = "Hebi Hub Gateway";
     Duration = 5;
     });
     task.wait(0.5)
@@ -262,7 +262,7 @@ function confirmsavedkey()
         writefile("minhtientiny.txt", keyBox.Text)
         Notify({
         Description = "Checking Key..";
-        Title = "chuida Hub Gateway";
+        Title = "Hebi Hub Gateway";
         Duration = 5;
         });
         task.wait(0.5)
@@ -275,7 +275,7 @@ function confirmkey()
 	writefile("minhtientiny.txt", keyBox.Text)
         Notify({
         Description = "Checking Key..";
-        Title = "chuida Hub Gateway";
+        Title = "Hebi Hub Gateway";
         Duration = 5;
         });
         task.wait(0.5)
@@ -290,7 +290,7 @@ function getkey()
 	setclipboard(GetLink())
         Notify({
         Description = "Copied Key Link to Clipboard.";
-        Title = "chuida Hub Gateway";
+        Title = "Hebi Hub Gateway";
         Duration = 5;
         });
 end
@@ -299,7 +299,7 @@ joinDiscord.MouseButton1Click:Connect(function()
 setclipboard("https://discord.com/invite/gQ54uPhAV4")
         Notify({
         Description = "Copied Key Link to Clipboard.";
-        Title = "chuida Hub Gateway";
+        Title = "Hebi Hub Gateway";
         Duration = 5;
         });
 end)

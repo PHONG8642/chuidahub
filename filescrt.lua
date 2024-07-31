@@ -24,7 +24,7 @@ local Window = Fluent:CreateWindow({
     SubTitle = "chuida|blox fruit",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 330),
-    Acrylic = false,
+    Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
 })

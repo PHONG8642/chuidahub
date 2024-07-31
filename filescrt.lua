@@ -23,23 +23,23 @@ local Window = Fluent:CreateWindow({
     Title = "chuida Hub",
     SubTitle = "chuida|blox fruit",
     TabWidth = 160,
-    Size = UDim2.fromOffset(530, 350),
+    Size = UDim2.fromOffset(530, 330),
     Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
-    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
-    Teleport = Window:AddTab({ Title = "Island", Icon = "palmtree" }),
-    Fruit = Window:AddTab({ Title = "Fruit", Icon = "cherry" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
-	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
-    Hop = Window:AddTab({ Title = "Hop server", Icon = "wifi" }),
+    Main = Window:AddTab({ Title = "cày level", Icon = "home" }),
+    Setting = Window:AddTab({ Title = "cài đặt", Icon = "settings" }),
+    Stats = Window:AddTab({ Title = "chỉ số", Icon = "plus-circle" }),
+    Player = Window:AddTab({ Title = "người chơi", Icon = "baby" }),
+    Teleport = Window:AddTab({ Title = "Nội địa", Icon = "palmtree" }),
+    Fruit = Window:AddTab({ Title = "trái cây", Icon = "cherry" }),
+    Raid = Window:AddTab({ Title = "đột kích", Icon = "swords" }),
+    Race = Window:AddTab({ Title = "tộc V4", Icon = "chevrons-right" }),
+    Shop = Window:AddTab({ Title = "cửa hàng", Icon = "shopping-cart" }),
+	Misc = Window:AddTab({ Title = "thông tin", Icon = "list-plus" }),
+    Hop = Window:AddTab({ Title = "đổi máy chủ", Icon = "wifi" }),
 }
 local Options = Fluent.Options
 do
@@ -2070,9 +2070,9 @@ end
     local tweenfunc = {}
     local Distance = (RealTarget.Position - game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position)
         .Magnitude
-    if Distance < 1000 then
+    if Distance < 5000 then
         Speed = 350
-    elseif Distance >= 1000 then
+    elseif Distance >= 5000 then
         Speed = 350
     end
     if BypassTP then
@@ -2379,7 +2379,7 @@ end
             CamShake:Stop()
             CombatFramework.activeController.attacking = false
             CombatFramework.activeController.timeToNextAttack = 0
-            CombatFramework.activeController.hitboxMagnitude = 180
+            CombatFramework.activeController.hitboxMagnitude = 200
             game:GetService'VirtualUser':CaptureController()
             game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
         end
@@ -2502,12 +2502,12 @@ ToggleButton.BorderSizePixel = 0
 ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
 ToggleButton.Font = Enum.Font.SourceSans
-ToggleButton.Text = "Open|Close"
+ToggleButton.Text = "18733986564"
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton.TextSize = 14.000
 ToggleButton.Draggable = true
 ToggleButton.MouseButton1Click:Connect(function()
-	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
+	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,true,game)
 end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Remove Effect
@@ -2522,7 +2522,7 @@ end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
 local Farming = Tabs.Main:AddSection("Farming")
-local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
+local listfastattack = {'Normal Attack','Fast Attack',''}
 
     local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
         Title = "Select Fast Attack",
@@ -2530,7 +2530,7 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
         Multi = false,
         Default = 1,
     })
-    DropdownDelayAttack:SetValue("Fast Attack")
+    DropdownDelayAttack:SetValue("Super Fast Attack")
     DropdownDelayAttack:OnChanged(function(Value)
     _G.FastAttackFaiFao_Mode = Value
 	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
@@ -2538,7 +2538,7 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
 		_G.Fast_Delay = 0.25
 	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.05
+		_G.Fast_Delay = 0.02
 	end
 end)
 
@@ -2597,7 +2597,7 @@ end)
     ToggleLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
     end)
-    Options.ToggleLevel:SetValue(false)
+    Options.ToggleLevel:SetValue(true)
     spawn(function()
         while task.wait() do
         if _G.AutoLevel then
@@ -4812,9 +4812,6 @@ ToggleMelee:OnChanged(function(Value)
     end)
 Options.ToggleMelee:SetValue(false)
 
-
-
-
 local ToggleDe = Tabs.Stats:AddToggle("ToggleDe", {Title = "Auto Defense", Default = false })
 ToggleDe:OnChanged(function(Value)
     _G.Auto_Stats_Defense = Value
@@ -6672,7 +6669,7 @@ spawn(function()
 
 Tabs.Misc:AddButton({
 	Title = "Show Items",
-	Description = "",
+	Description = "mele",
 	Callback = function()
 		do
 			local ui = game:GetService("CoreGui").RobloxGui.Modules.Profile:FindFirstChild("UILibrary")
@@ -6952,7 +6949,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                Title = "chuida Hub",
                 Content = "Turn Off Find Full Moon...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6960,7 +6957,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                Title = "chuida Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6968,7 +6965,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                Title = "chuida Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear

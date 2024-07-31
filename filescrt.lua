@@ -2487,7 +2487,7 @@ function BTP(p)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ---Close UI
-local ToggleUI = Instance.new("đã ẩn tap")
+local ToggleUI = Instance.new("ToggleUI")
 local ToggleButton = Instance.new("TextButton")
 local ToggleButtonHUI = Instance.new("UICorner")
 ToggleUI.Name = "ToggleUI"
@@ -2502,7 +2502,7 @@ ToggleButton.BorderSizePixel = 0
 ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
 ToggleButton.Font = Enum.Font.SourceSans
-ToggleButton.Text = "OPEN|CLOSE"
+ToggleButton.Text = "open|close"
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton.TextSize = 14.000
 ToggleButton.Draggable = true
@@ -3594,7 +3594,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
       ToggleTPKitsune:OnChanged(function(Value)
         _G.TweenToKitsune = Value
       end)
-      Options.ToggleTPKitsune:SetValue(false)
+      Options.ToggleTPKitsune:SetValue(true)
       spawn(function()
         local kitsuneIsland
         while not kitsuneIsland do
@@ -3620,7 +3620,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
       ToggleCollectAzure:OnChanged(function(Value)
          _G.CollectAzure = Value
       end)
-      Options.ToggleCollectAzure:SetValue(false)
+      Options.ToggleCollectAzure:SetValue(true)
 spawn(function()
     while wait() do
         if _G.CollectAzure then

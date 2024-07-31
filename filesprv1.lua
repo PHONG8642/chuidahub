@@ -173,7 +173,7 @@ UIAspectRatioConstraint_8.AspectRatio = 3.729
 UIAspectRatioConstraint_9.Parent = Key
 UIAspectRatioConstraint_9.AspectRatio = 3.729
 
-logo.Name = "chuidahub/v1"
+logo.Name = "chuida"
 logo.Parent = Key
 logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 logo.BackgroundTransparency = 1.000
@@ -203,7 +203,7 @@ function Verify(key)
         });
         task.wait(0.5)
         Notify({
-        Description = "Invalid key!";
+        Description = "0hdde141";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });
@@ -212,7 +212,7 @@ function Verify(key)
     
     local OnInvalid = function() 
         Notify({
-        Description = "Invalid Key!";
+        Description = "0hdde141";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });

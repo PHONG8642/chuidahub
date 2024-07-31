@@ -17,21 +17,21 @@
 local Update = loadstring(Game:HttpGet"https://roblox.relzscript.xyz/source/relzhub/library/pc.lua")()
 local Alert = loadstring(Game:HttpGet"https://raw.githubusercontent.com/Basicallyybeta/uii/main/Mingameui.lua")()
 local Library = Update:Window("Blox Fruits")
-local Main = Library:Tab("Main","rbxassetid://10723407389")
-local Set = Library:Tab("Setting","rbxassetid://10734950309")
-local Hold = Library:Tab("Hold Skill","rbxassetid://10734984606")
-local M = Library:Tab("Items","rbxassetid://10709769841")
-local Sea = Library:Tab("Sea","rbxassetid://10709761530")
-local Ss = Library:Tab("Stats","rbxassetid://10709770317")
-local RaceV4 = Library:Tab("Race","rbxassetid://10747372167")
-local P = Library:Tab("Combat","rbxassetid://10734975486")
-local R = Library:Tab("Raid","rbxassetid://10723345749")
+local Main = Library:Tab("main","rbxassetid://10723407389")
+local Set = Library:Tab("cài đặt","rbxassetid://10734950309")
+local Hold = Library:Tab("chiêu thức","rbxassetid://10734984606")
+local M = Library:Tab("đồ","rbxassetid://10709769841")
+local Sea = Library:Tab("biển","rbxassetid://10709761530")
+local Ss = Library:Tab("chỉ số","rbxassetid://10709770317")
+local RaceV4 = Library:Tab("tộc","rbxassetid://10747372167")
+local P = Library:Tab("đánh nhau","rbxassetid://10734975486")
+local R = Library:Tab("tập kích","rbxassetid://10723345749")
 local ESP = Library:Tab("Esp","rbxassetid://10723346959")
-local T = Library:Tab("Teleport","rbxassetid://10723434557")
-local S = Library:Tab("Shop","rbxassetid://10734952479")
-local D = Library:Tab("Devil Fruit","rbxassetid://10709761889")
+local T = Library:Tab("dịch chuyển","rbxassetid://10723434557")
+local S = Library:Tab("cửa hàng","rbxassetid://10734952479")
+local D = Library:Tab("trái cây","rbxassetid://10709761889")
 local Misc = Library:Tab("Misc","rbxassetid://10723424838")
-local Sever = Library:Tab("Serv","rbxassetid://10723426722")
+local Sever = Library:Tab("máy chủ lỗi","rbxassetid://10723426722")
 
 
 if game.PlaceId == 2753915549 then
@@ -2148,7 +2148,7 @@ local GameTime = math.floor(workspace.DistributedGameTime+0.5)
 local Hour = math.floor(GameTime/(60^2))%24
 local Minute = math.floor(GameTime/(60^1))%60
 local Second = math.floor(GameTime/(60^0))%60
-Time:Set("[GameTime] : Hours : "..Hour.." Min : "..Minute.." Sec : "..Second)
+Time:Set("[GameTime] : Hours : "..Hours.." 30Min : "..Minute.." sec : "..Second)
 end
 
 spawn(function()
@@ -2777,7 +2777,7 @@ end
         end
     end)
 
-    Main:Seperator("Bone Farm")
+    Main:Seperator("cày xương")
     
     local ListB = {"No Quest", "Quest", "MasteryFruit", "MasteryGun"}
     BoneFMode = "No Quest"
@@ -3548,7 +3548,7 @@ spawn(function()
 end)
 
 
-Set:Toggle("Black Screen",false,false,function(Umm)
+Set:Toggle("Black Screen",true,false,function(Umm)
 _G.StartBlackScreen = Umm
 end)
 
@@ -6347,7 +6347,7 @@ function AddEsp(Name, Parent)
     BillboardGui.Parent = Parent
     BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     BillboardGui.Active = true
-    BillboardGui.Name = Name
+    BillboardGui.Name = chuida
     BillboardGui.AlwaysOnTop = true
     BillboardGui.LightInfluence = 1.000
     BillboardGui.Size = UDim2.new(0, 200, 0, 50)
@@ -10488,7 +10488,7 @@ end)
       
 Misc:Seperator("Teams")
     
-    Misc:Button("Join Pirates Team",function()
+    Misc:Button("Join Marines Team",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam","Pirates") 
     end)
     

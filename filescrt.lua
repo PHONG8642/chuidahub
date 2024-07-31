@@ -24,7 +24,7 @@ local Window = Fluent:CreateWindow({
     SubTitle = "chuida|blox fruit",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 330),
-    Acrylic = true,
+    Acrylic = false,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
 })
@@ -2134,7 +2134,7 @@ function Tween(Pos)
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
     pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/300, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
     tween:Play()
-    if Distance <= 300 then
+    if Distance <= 350 then
         tween:Cancel()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
     end
@@ -2282,7 +2282,7 @@ spawn(function()
       if _G.TeleportIsland or _G.CastleRaid or AutoFarmChest or _G.CollectAzure or _G.TweenToKitsune or _G.AutoCandy or _G.GhostShip or _G.Ship or _G.SailBoat or _G.Auto_Holy_Torch or _G.Tweenfruit or _G.FindMirageIsland or _G.TeleportPly or _G.AutoFishCrew or _G.AutoShark or _G.AutoMysticIsland or _G.AutoCakeV2 or _G.AutoQuestRace or _G.AutoBuyBoat or _G.dao or AutoFarmAcient or _G.AutoMirage or Auto_Law or _G.AutoQuestRace or _G.AutoAllBoss or _G.AutoHolyTorch or AutoTushita or _G.farmpiranya or _G.AutoTerrorshark or _G.AutoNear or _G.AutoCakeV2V2 or PirateShip or _G.AutoSeaBeast or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or _G.Ectoplasm or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or _G.AutoLevel or _G.Clip2 or AutoFarmNoQuest or _G.AutoBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or _G.AutoBoss or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or _G.CakePrince or _G.AutoElite or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or _G.AutoKillPlayerMelee or _G.AutoKillPlayerGun or _G.AutoKillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or _G.AutoMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or _G.Ectoplasm then
       for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
       if v:IsA("BasePart") then
-      v.CanCollide = false
+      v.CanCollide = true
       end
       end
       end
@@ -2442,7 +2442,7 @@ function BTP(P)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
 		task.wait()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
-	until (P.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000
+	until (P.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000
 end
 
 function BTP(p)
@@ -2487,7 +2487,7 @@ function BTP(p)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ---Close UI
-local ToggleUI = Instance.new("ScreenGui")
+local ToggleUI = Instance.new("đã ẩn tap")
 local ToggleButton = Instance.new("TextButton")
 local ToggleButtonHUI = Instance.new("UICorner")
 ToggleUI.Name = "ToggleUI"
@@ -2502,7 +2502,7 @@ ToggleButton.BorderSizePixel = 0
 ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ToggleButton.Size = UDim2.new(0, 50, 0, 50)
 ToggleButton.Font = Enum.Font.SourceSans
-ToggleButton.Text = "18733986564"
+ToggleButton.Text = "OPEN|CLOSE"
 ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton.TextSize = 14.000
 ToggleButton.Draggable = true
@@ -2522,7 +2522,7 @@ end
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
 local Farming = Tabs.Main:AddSection("Farming")
-local listfastattack = {'Normal Attack','Fast Attack',''}
+local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 
     local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
         Title = "Select Fast Attack",
@@ -2727,7 +2727,7 @@ end)
           MonFarm = v.Name
           --Click
           until not _G.AutoNear or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
-          bringmob = false
+          bringmob = true
         end
           end
           end
@@ -2742,7 +2742,7 @@ end)
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
     end)
-    Options.ToggleCastleRaid:SetValue(false)
+    Options.ToggleCastleRaid:SetValue(true)
     spawn(function()
         while wait() do
             if _G.CastleRaid then
@@ -2911,7 +2911,7 @@ end)
 
 
       Tabs.Main:AddButton({
-        Title = "Redeem All Code",
+        Title = "nhập tất cả code",
         Description = "Redeem all code x2 exp",
         Callback = function()
             UseCode()
@@ -3237,11 +3237,11 @@ spawn(function()
     end
 end)
 
-local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Cake Prince", Default = false })
+local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Cake Prince", Default = true })
 ToggleCake:OnChanged(function(Value)
  _G.CakePrince = Value
 end)
-Options.ToggleCake:SetValue(false)
+Options.ToggleCake:SetValue(true)
 spawn(function()
 		while wait() do
 			if _G.CakePrince then
@@ -3553,7 +3553,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
             UpdateKitsune() 
         end
     end)
-      Options.ToggleEspKitsune:SetValue(false)
+      Options.ToggleEspKitsune:SetValue(true)
 
       function UpdateKitsune()
         for i, v in pairs(game:GetService("Workspace").Map.KitsuneIsalnd.ShrineActive:GetChildren()) do
@@ -3642,7 +3642,7 @@ if Third_Sea then
     ToggleSailBoat:OnChanged(function(Value)
         _G.SailBoat = Value
     end)
-    Options.ToggleSailBoat:SetValue(false)
+    Options.ToggleSailBoat:SetValue(true)
 
 
     spawn(function()
@@ -3704,7 +3704,7 @@ if Third_Sea then
     ToggleTerrorshark:OnChanged(function(Value)
         _G.AutoTerrorshark = Value
     end)
-    Options.ToggleTerrorshark:SetValue(false)
+    Options.ToggleTerrorshark:SetValue(true)
     spawn(function()
         while wait() do
             if _G.AutoTerrorshark then
@@ -3745,7 +3745,7 @@ if Third_Sea then
      TogglePiranha:OnChanged(function(Value)
         _G.farmpiranya = Value
      end)
-     Options.TogglePiranha:SetValue(false)
+     Options.TogglePiranha:SetValue(true)
 
      spawn(function()
         while wait() do
@@ -3786,7 +3786,7 @@ if Third_Sea then
      ToggleShark:OnChanged(function(Value)
         _G.AutoShark = Value
      end)
-     Options.ToggleShark:SetValue(false)
+     Options.ToggleShark:SetValue(true)
      spawn(function()
         while wait() do
             if _G.AutoShark then
@@ -3827,7 +3827,7 @@ if Third_Sea then
     ToggleFishCrew:OnChanged(function(Value)
        _G.AutoFishCrew = Value
     end)
-    Options.ToggleFishCrew:SetValue(false)
+    Options.ToggleFishCrew:SetValue(true)
 
     spawn(function()
         while wait() do
@@ -3873,7 +3873,7 @@ if Third_Sea then
     ToggleShip:OnChanged(function(Value)
         _G.Ship = Value
        end)
-       Options.ToggleShip:SetValue(false)
+       Options.ToggleShip:SetValue(true)
        function CheckPirateBoat()
         local checkmmpb = {"PirateGrandBrigade", "PirateBrigade"}
         for r, v in next, game:GetService("Workspace").Enemies:GetChildren() do
@@ -3913,7 +3913,7 @@ end)
     ToggleGhostShip:OnChanged(function(Value)
         _G.GhostShip = Value
        end)
-       Options.ToggleGhostShip:SetValue(false)
+       Options.ToggleGhostShip:SetValue(true)
     
        function CheckPirateBoat()
         local checkmmpb = {"FishBoat"}
@@ -4036,7 +4036,7 @@ spawn(function()
     ToggleElite:OnChanged(function(Value)
        _G.AutoElite = Value
        end)
-       Options.ToggleElite:SetValue(false)
+       Options.ToggleElite:SetValue(true)
        spawn(function()
            while task.wait() do
                if _G.AutoElite then
@@ -4094,7 +4094,7 @@ local ToggleSeaBeAst = Tabs.Main:AddToggle("ToggleSeaBeAst", {Title = "Auto Sea 
 ToggleSeaBeAst:OnChanged(function(Value)
     _G.AutoSeaBeast = Value
     end)
-    Options.ToggleSeaBeAst:SetValue(false)
+    Options.ToggleSeaBeAst:SetValue(true)
  
     
     Skillz = true
@@ -4208,7 +4208,7 @@ local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "Auto Press W", 
 ToggleAutoW:OnChanged(function(Value)
     _G.AutoW = Value
     end)
- Options.ToggleAutoW:SetValue(false)
+ Options.ToggleAutoW:SetValue(true)
  spawn(function()
     while wait() do
         pcall(function()
@@ -4228,7 +4228,7 @@ local ToggleTweenMirageIsland = Tabs.Main:AddToggle("ToggleTweenMirageIsland", {
 ToggleTweenMirageIsland:OnChanged(function(Value)
     _G.AutoMysticIsland = Value
 end) 
-Options.ToggleTweenMirageIsland:SetValue(false)
+Options.ToggleTweenMirageIsland:SetValue(true)
 spawn(function()
     pcall(function()
         while wait() do
@@ -4248,7 +4248,7 @@ local ToggleTweenGear = Tabs.Main:AddToggle("ToggleTweenGear", {Title = "Tween T
 ToggleTweenGear:OnChanged(function(Value)
     _G.TweenToGear = Value
 end) 
-Options.ToggleTweenGear:SetValue(false)
+Options.ToggleTweenGear:SetValue(true)
 
 spawn(function()
     pcall(function()
@@ -4275,7 +4275,7 @@ spawn(function()
     Togglelockmoon:OnChanged(function(Value)
         _G.AutoLockMoon = Value
     end) 
-    Options.Togglelockmoon:SetValue(false)
+    Options.Togglelockmoon:SetValue(true)
 
     spawn(function()
         while wait() do
@@ -4308,7 +4308,7 @@ ToggleMirage:OnChanged(function(Value)
  _G.AutoSeaBeast = Value
 end) 
 
- Options.ToggleMirage:SetValue(false)
+ Options.ToggleMirage:SetValue(true)
 
  local AutoW = Tabs.Main:AddToggle("AutoW", {Title = "Auto Press W", Default = false })
  AutoW:OnChanged(function(Value)
@@ -4390,7 +4390,7 @@ if Third_Sea then
            ToggleYama:OnChanged(function(Value)
             _G.AutoYama = Value
            end)
-           Options.ToggleYama:SetValue(false)
+           Options.ToggleYama:SetValue(true)
            spawn(function()
             while wait() do
                 if _G.AutoYama then
@@ -4408,7 +4408,7 @@ if Third_Sea then
         ToggleTushita:OnChanged(function(Value)
             AutoTushita = Value
         end)
-        Options.ToggleTushita:SetValue(false)
+        Options.ToggleTushita:SetValue(true)
            spawn(function()
                    while wait() do
                                if AutoTushita then
@@ -4445,7 +4445,7 @@ if Third_Sea then
                    ToggleHoly:OnChanged(function(Value)
                     _G.Auto_Holy_Torch = Value
                    end)
-                   Options.ToggleHoly:SetValue(false)
+                   Options.ToggleHoly:SetValue(true)
                    spawn(function()
                     while wait() do
                         if _G.Auto_Holy_Torch then
@@ -4473,7 +4473,7 @@ if Second_Sea then
         ToggleFactory:OnChanged(function(Value)
             _G.Factory = Value
         end)
-        Options.ToggleFactory:SetValue(false)
+        Options.ToggleFactory:SetValue(true)
 
         spawn(function()
             while wait() do
@@ -4517,7 +4517,7 @@ if Second_Sea then
     ToggleCakeV2:OnChanged(function(Value)
         _G.AutoCakeV2 = Value
     end)
-        Options.ToggleCakeV2:SetValue(false)
+        Options.ToggleCakeV2:SetValue(true)
 end
     spawn(function()
         while wait() do
@@ -4557,7 +4557,7 @@ if Second_Sea or Third_Sea then
     ToggleHakiColor:OnChanged(function(Value)
         _G.Auto_Buy_Enchancement = Value
     end)
-        Options.ToggleHakiColor:SetValue(false)
+        Options.ToggleHakiColor:SetValue(true)
     spawn(function()
             while wait() do
                 if _G.Auto_Buy_Enchancement then
@@ -4576,7 +4576,7 @@ if Second_Sea then
     ToggleSwordLengend:OnChanged(function(Value)
         _G.BuyLengendSword = Value
     end)
-        Options.ToggleSwordLengend:SetValue(false)
+        Options.ToggleSwordLengend:SetValue(true)
 
         spawn(function()
             while wait(.1) do

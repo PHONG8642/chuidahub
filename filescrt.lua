@@ -2507,7 +2507,7 @@ ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton.TextSize = 14.000
 ToggleButton.Draggable = true
 ToggleButton.MouseButton1Click:Connect(function()
-	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,true,game)
+	game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Remove Effect
@@ -2597,7 +2597,7 @@ end)
     ToggleLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
     end)
-    Options.ToggleLevel:SetValue(true)
+    Options.ToggleLevel:SetValue(false)
     spawn(function()
         while task.wait() do
         if _G.AutoLevel then
@@ -2742,7 +2742,7 @@ end)
     ToggleCastleRaid:OnChanged(function(Value)
         _G.CastleRaid = Value
     end)
-    Options.ToggleCastleRaid:SetValue(true)
+    Options.ToggleCastleRaid:SetValue(false)
     spawn(function()
         while wait() do
             if _G.CastleRaid then
@@ -3241,7 +3241,7 @@ local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Cake Prince"
 ToggleCake:OnChanged(function(Value)
  _G.CakePrince = Value
 end)
-Options.ToggleCake:SetValue(true)
+Options.ToggleCake:SetValue(false)
 spawn(function()
 		while wait() do
 			if _G.CakePrince then
@@ -3305,7 +3305,7 @@ spawn(function()
     ToggleSpawnCake:OnChanged(function(Value)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner",Value)
     end)
-    Options.ToggleSpawnCake:SetValue(true)
+    Options.ToggleSpawnCake:SetValue(fasle)
 end
 
     if Second_Sea then

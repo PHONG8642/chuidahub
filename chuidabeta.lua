@@ -11019,4 +11019,4 @@ for _, fruitData in pairs(result) do
 end
 
 
-    Alert:create("Done Loaded!")
+    Alert:create("load thành công!")

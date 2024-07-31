@@ -990,7 +990,7 @@ end
 
 --// Check Material
 function MaterialMon()
-if SelectMaterial == "Radioactive Material" then
+if SelectMaterial == "nguyên liệu" then
 MMon = "Factory Staff"
 MPos = CFrame.new(295,73,-56)
 SP = "Default"
@@ -1991,7 +1991,7 @@ end
   function Tween2(P1)
     local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     if Distance >= 1 then
-    Speed = 300
+    Speed = 350
     end
     game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear), {
       CFrame = P1
@@ -2070,16 +2070,16 @@ end
     local tweenfunc = {}
     local Distance = (RealTarget.Position - game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position)
         .Magnitude
-    if Distance < 1000 then
-        Speed = 315
-    elseif Distance >= 1000 then
-        Speed = 300
+    if Distance < 5000 then
+        Speed = 350
+    elseif Distance >= 5000 then
+        Speed = 350
     end
     if BypassTP then
-        if Distance > 3000 and not AutoNextIsland and not (game.Players.LocalPlayer.Backpack:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Character:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Sweet Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sweet Chalice")) and not (Name == "Fishman Commando" or Name == "Fishman Warrior") then
+        if Distance > 5000 and not AutoNextIsland and not (game.Players.LocalPlayer.Backpack:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Character:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Sweet Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sweet Chalice")) and not (Name == "Fishman Commando" or Name == "Fishman Warrior") then
             pcall(function()
                 tween:Cancel()
-                fkwarp = false
+                fkwarp = true
                 if game:GetService("Players")["LocalPlayer"].Data:FindFirstChild("SpawnPoint").Value == tostring(GetIsLand(RealTarget)) then
                     wait(.1)
                     Com("F_", "TeleportToSpawn")
@@ -2132,9 +2132,9 @@ end
 function Tween(Pos)
     Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
-    pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/300, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
+    pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/350, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
     tween:Play()
-    if Distance <= 300 then
+    if Distance <= 350 then
         tween:Cancel()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
     end
@@ -2437,7 +2437,7 @@ end)
 end
 ---Bypass Teleport
 function BTP(P)
-	repeat wait(0.5)
+	repeat wait(0.7)
 		game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
 		task.wait()
@@ -2487,14 +2487,14 @@ function BTP(p)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 ---Close UI
-local ToggleUI = Instance.new("ScreenGui")
-local ToggleButton = Instance.new("TextButton")
-local ToggleButtonHUI = Instance.new("UICorner")
-ToggleUI.Name = "ToggleUI"
+local ToggleUI = Instance.new("ấn để mở lại")
+local ToggleButton = Instance.new("ấn để sửa")
+local ToggleButtonHUI = Instance.new("ẩn tap")
+ToggleUI.Name = "mở tap"
 ToggleUI.Parent = game.CoreGui
 ToggleUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-ToggleButton.Name = "ToggleButton"
+ToggleButton.Name = "mở tap"
 ToggleButton.Parent = ToggleUI
 ToggleButton.BackgroundColor3 = Color3.fromRGB(30,20,20)
 ToggleButton.BackgroundTransparency = 0.1
@@ -2534,11 +2534,11 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     DropdownDelayAttack:OnChanged(function(Value)
     _G.FastAttackFaiFao_Mode = Value
 	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
-		_G.Fast_Delay = 0.17
+		_G.Fast_Delay = 0.20
 	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.25
+		_G.Fast_Delay = 0.10
 	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.05
+		_G.Fast_Delay = 0.02
 	end
 end)
 
@@ -2606,9 +2606,9 @@ end)
           if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
           if BypassTP then
-            if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
+            if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2550 then
             BTP(CFrameQ)
-            elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
+            elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2550 then
             Tween(CFrameQ)
             end
                 else
@@ -2636,7 +2636,7 @@ end)
           MonFarm = v.Name
           --Click
           until not _G.AutoLevel or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
-          bringmob = false
+          bringmob = true
         end   
           end
           end
@@ -2911,7 +2911,7 @@ end)
 
 
       Tabs.Main:AddButton({
-        Title = "Redeem All Code",
+        Title = "nhập hết mã",
         Description = "Redeem all code x2 exp",
         Callback = function()
             UseCode()
@@ -2940,7 +2940,7 @@ end)
 
 
     Tabs.Main:AddButton({
-        Title = "Fps Booster",
+        Title = "giảm lag",
         Description = "Boost your fps",
         Callback = function()
             FPSBooster()
@@ -2991,7 +2991,7 @@ end)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Mastery
-local Mastery = Tabs.Main:AddSection("Mastery Farm")
+local Mastery = Tabs.Main:AddSection("thông thạo")
     local DropdownMastery = Tabs.Main:AddDropdown("DropdownMastery", {
         Title = "Mastery Mode",
         Values = {"Level","Near Mobs",},
@@ -4602,17 +4602,17 @@ local SettingFarm = Tabs.Setting:AddSection("Setting Farming")
  local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = " Enable Fast Attack", Default = true })
 
     ToggleFastAttack:OnChanged(function(Value)
-     _G.FastAttackFaiFao = Value
+     _G.FastAttackchuida = Value
     end)
     Options.ToggleFastAttack:SetValue(true)
 
 spawn(function()
 	while wait(0.4) do
 		pcall(function()
-			if _G.FastAttackFaiFao then
+			if _G.FastAttackchuida then
 				repeat wait(_G.Fast_Delay)
 					AttackNoCD()
-				until not _G.FastAttackFaiFao
+				until not _G.FastAttackchuida
 			end
 		end)
 	end
@@ -4662,7 +4662,7 @@ Camera:Stop()
                     end
                 end)
 
-    local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Enable Bypass Tp", Default = false })
+    local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Enable Bypass Tp", Default = true })
     ToggleBypassTP:OnChanged(function(Value)
         BypassTP = Value
     end)
@@ -4806,7 +4806,7 @@ SliderPosZ:SetValue(10)
 
 
 --Stats
-local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Melee", Default = false })
+local ToggleMelee = Tabs.Stats:AddToggle("ToggleMelee", {Title = "Auto Melee", Default = true })
 ToggleMelee:OnChanged(function(Value)
     _G.Auto_Stats_Melee = Value
     end)
@@ -5194,7 +5194,7 @@ end)
 local Teleport = Tabs.Teleport:AddSection("Teleport World")
 
 Tabs.Teleport:AddButton({
-    Title = "First Sea",
+    Title = "Biển 1",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
@@ -5204,7 +5204,7 @@ Tabs.Teleport:AddButton({
 
 
 Tabs.Teleport:AddButton({
-    Title = "Second Sea",
+    Title = "biển 2",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
@@ -5214,7 +5214,7 @@ Tabs.Teleport:AddButton({
 
 
 Tabs.Teleport:AddButton({
-    Title = "Third Sea",
+    Title = "biển 3",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
@@ -5451,7 +5451,7 @@ spawn(function()
 end)
 
 
-local ToggleStore = Tabs.Fruit:AddToggle("ToggleStore", {Title = "Store Fruit", Default = false })
+local ToggleStore = Tabs.Fruit:AddToggle("ToggleStore", {Title = "Store Fruit", Default = true })
 ToggleStore:OnChanged(function(Value)
     _G.AutoStoreFruit = Value
 end)
@@ -5574,7 +5574,7 @@ spawn(function()
 
 
 
-local ToggleRandomFruit = Tabs.Fruit:AddToggle("ToggleRandomFruit", {Title = "Random Fruit", Default = false })
+local ToggleRandomFruit = Tabs.Fruit:AddToggle("ToggleRandomFruit", {Title = "Random Fruit", Default = true })
 ToggleRandomFruit:OnChanged(function(Value)
     _G.Random_Auto = Value
 end)
@@ -5589,7 +5589,7 @@ spawn(function()
     end)
 end)
 
-local ToggleCollect = Tabs.Fruit:AddToggle("ToggleCollect", {Title = "Collect Devil Fruit", Default = false })
+local ToggleCollect = Tabs.Fruit:AddToggle("ToggleCollect", {Title = "Collect Devil Fruit", DefaultLoc(true })
 ToggleCollect:OnChanged(function(Value)
     _G.Tweenfruit = Value
 end)
@@ -6496,7 +6496,7 @@ function Hop()
 	local AllIDs = {}
 	local foundAnything = ""
 	local actualHour = os.date("!*t").hour
-	local Deleted = false
+	local Deleted = true
 	function TPReturner()
 		local Site;
 		if foundAnything == "" then
@@ -6625,7 +6625,7 @@ local Mastery = Tabs.Misc:AddSection("Troll")
 
 Tabs.Misc:AddButton({
 	Title = "Rain Fruit",
-	Description = "Rain fruit (Fake)",
+	Description = "không nên sài (Fake)",
 	Callback = function()
         for i, v in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
             v.Parent = game.Workspace.Map
@@ -6952,7 +6952,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                Title = "chuida Hub",
                 Content = "Turn Off Find Full Moon...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6960,7 +6960,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                ToggleMirage = "chuida Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -6968,7 +6968,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
             Hop()
             Fluent:Notify({
-                Title = "Fai Fao Hub",
+                Title = "chuida Hub",
                 Content = "Hop...",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear

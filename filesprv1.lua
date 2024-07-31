@@ -79,8 +79,8 @@ keyBox.ClipsDescendants = true
 keyBox.Position = UDim2.new(0.0184762254, 0, 0.327122301, 0)
 keyBox.Size = UDim2.new(0.982183516, 0, 0.686008453, 0)
 keyBox.Font = Enum.Font.Arial
-keyBox.PlaceholderText = "Example: HEBI_XXxxxxxxxxxxxxxx"
-keyBox.Text = ""
+keyBox.PlaceholderText = "Example: chuida key xxxx"
+keyBox.Text = "0hdde141"
 keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 keyBox.TextSize = 14.000
 keyBox.TextXAlignment = Enum.TextXAlignment.Left
@@ -190,7 +190,7 @@ local Notify = AkaliNotif.Notify;
 --// Get Key \\--
 local AccountId = 35;
 function GetLink()
-    return string.format("hhttps://gateway.platoboost.com/l/46240/Chuida", AccountId, game:GetService("Players").LocalPlayer.UserId);
+    return string.format("https://gateway.platoboost.com/l/46240/Chuida", AccountId, game:GetService("Players").LocalPlayer.UserId);
 end
 
 --// Verify \\--
@@ -289,7 +289,7 @@ verifyKey.MouseButton1Click:Connect(confirmkey)
 function getkey()
 	setclipboard(GetLink())
         Notify({
-        Description = "Copied Key Link to Clipboard.";
+        Description = "0hdde141.";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });
@@ -298,7 +298,7 @@ end
 joinDiscord.MouseButton1Click:Connect(function()
 setclipboard("https://discord.com/invite/35HkXbS9")
         Notify({
-        Description = "Copied Key Link to Clipboard.";
+        Description = "0hdde141.";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });

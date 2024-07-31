@@ -45,7 +45,7 @@ ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ResetOnSpawn = false
 ScreenGui.DisplayOrder = 100
 
-Key.Name = "CHUIDAV1"
+Key.Name = "Key"
 Key.Parent = ScreenGui
 Key.BackgroundColor3 = Color3.fromRGB(4, 26, 28)
 Key.BackgroundTransparency = 0.160
@@ -116,7 +116,7 @@ Buttons.BackgroundTransparency = 1.000
 Buttons.Position = UDim2.new(0.264367878, 0, 0.614285648, 0)
 Buttons.Size = UDim2.new(0.722222269, 0, 0.335714251, 0)
 
-getKey.Name = "chuidav1"
+getKey.Name = "getKey"
 getKey.Parent = Buttons
 getKey.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 getKey.BackgroundTransparency = 0.700
@@ -148,7 +148,7 @@ UICorner_5.Parent = verifyKey
 UIAspectRatioConstraint_5.Parent = verifyKey
 UIAspectRatioConstraint_5.AspectRatio = 2.553
 
-joinDiscord.Name = "https://discord.com/invite/gQ54uPhAV4"
+joinDiscord.Name = "joinDiscord"
 joinDiscord.Parent = Buttons
 joinDiscord.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 joinDiscord.BackgroundTransparency = 0.700
@@ -173,14 +173,14 @@ UIAspectRatioConstraint_8.AspectRatio = 3.729
 UIAspectRatioConstraint_9.Parent = Key
 UIAspectRatioConstraint_9.AspectRatio = 3.729
 
-logo.Name = "chuida"
+logo.Name = "logo"
 logo.Parent = Key
 logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 logo.BackgroundTransparency = 1.000
 logo.BorderSizePixel = 0
 logo.Position = UDim2.new(0.0357252173, 0, 0.112734579, 0)
 logo.Size = UDim2.new(0.195282057, 0, 0.684913754, 0)
-logo.Image = "http://www.roblox.com/asset/?id=18733986564"
+logo.Image = "http://www.roblox.com/asset/?id=15263272177"
 
 UIAspectRatioConstraint_10.Parent = logo
 
@@ -190,7 +190,7 @@ local Notify = AkaliNotif.Notify;
 --// Get Key \\--
 local AccountId = 35;
 function GetLink()
-    return string.format("https://gateway.platoboost.com/l/46240/Chuida", AccountId, game:GetService("Players").LocalPlayer.UserId);
+    return string.format("hhttps://gateway.platoboost.com/l/46240/Chuida", AccountId, game:GetService("Players").LocalPlayer.UserId);
 end
 
 --// Verify \\--
@@ -203,7 +203,7 @@ function Verify(key)
         });
         task.wait(0.5)
         Notify({
-        Description = "0hdde141";
+        Description = "Copied Key Link to Clipboard.";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });
@@ -212,13 +212,13 @@ function Verify(key)
     
     local OnInvalid = function() 
         Notify({
-        Description = "0hdde141";
+        Description = "Invalid Key!";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });
         task.wait(0.5)
         Notify({
-        Description = "Invalid Key!";
+        Description = "Copied Key Link to Clipboard.";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });
@@ -255,14 +255,14 @@ local HttpService = game:GetService("HttpService")
 --// Get Key \\--
 local AccountId = 35;
 function GetLink()
-    return string.format("h", AccountId, game:GetService("Players").LocalPlayer.UserId);
+    return string.format("https://gateway.platoboost.com/l/46240/Chuida", AccountId, game:GetService("Players").LocalPlayer.UserId);
 end
 
 function confirmsavedkey()
         writefile("minhtientiny.txt", keyBox.Text)
         Notify({
         Description = "Checking Key..";
-        Title = "Hebi Hub Gateway";
+        Title = "chuida Hub Gateway";
         Duration = 5;
         });
         task.wait(0.5)
@@ -275,7 +275,7 @@ function confirmkey()
 	writefile("minhtientiny.txt", keyBox.Text)
         Notify({
         Description = "Checking Key..";
-        Title = "Hebi Hub Gateway";
+        Title = "chuida Hub Gateway";
         Duration = 5;
         });
         task.wait(0.5)
@@ -296,10 +296,10 @@ function getkey()
 end
 
 joinDiscord.MouseButton1Click:Connect(function()
-setclipboard("https://discord.com/invite/gQ54uPhAV4")
+setclipboard("https://discord.com/invite/35HkXbS9")
         Notify({
         Description = "Copied Key Link to Clipboard.";
-        Title = "Hebi Hub Gateway";
+        Title = "chuida Hub Gateway";
         Duration = 5;
         });
 end)
@@ -314,7 +314,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "chuida Hub",
-    SubTitle = "Version 2",
+    SubTitle = "Version 1",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
     Acrylic = false,

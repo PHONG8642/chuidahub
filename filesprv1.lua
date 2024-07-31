@@ -116,7 +116,7 @@ Buttons.BackgroundTransparency = 1.000
 Buttons.Position = UDim2.new(0.264367878, 0, 0.614285648, 0)
 Buttons.Size = UDim2.new(0.722222269, 0, 0.335714251, 0)
 
-getKey.Name = "getKey"
+getKey.Name = "chuidav1"
 getKey.Parent = Buttons
 getKey.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 getKey.BackgroundTransparency = 0.700
@@ -148,7 +148,7 @@ UICorner_5.Parent = verifyKey
 UIAspectRatioConstraint_5.Parent = verifyKey
 UIAspectRatioConstraint_5.AspectRatio = 2.553
 
-joinDiscord.Name = "https://discord.com/invite/35HkXbS9"
+joinDiscord.Name = "https://discord.com/invite/gQ54uPhAV4"
 joinDiscord.Parent = Buttons
 joinDiscord.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 joinDiscord.BackgroundTransparency = 0.700
@@ -173,7 +173,7 @@ UIAspectRatioConstraint_8.AspectRatio = 3.729
 UIAspectRatioConstraint_9.Parent = Key
 UIAspectRatioConstraint_9.AspectRatio = 3.729
 
-logo.Name = "logo"
+logo.Name = "chuidahub/v1"
 logo.Parent = Key
 logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 logo.BackgroundTransparency = 1.000
@@ -203,7 +203,7 @@ function Verify(key)
         });
         task.wait(0.5)
         Notify({
-        Description = "0hdde141";
+        Description = "Invalid key!";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });
@@ -213,12 +213,12 @@ function Verify(key)
     local OnInvalid = function() 
         Notify({
         Description = "Invalid Key!";
-        Title = "Hebi Hub Gateway";
+        Title = "chuida Hub Gateway";
         Duration = 5;
         });
         task.wait(0.5)
         Notify({
-        Description = "0hdde141";
+        Description = "Invalid Key!";
         Title = "chuida Hub Gateway";
         Duration = 5;
         });

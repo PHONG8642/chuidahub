@@ -24,22 +24,22 @@ local Window = Fluent:CreateWindow({
     SubTitle = "join Discord https://discord.com/invite/35HkXbS9",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
-    Acrylic = false,
+    Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
-    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
-    Teleport = Window:AddTab({ Title = "Island", Icon = "palmtree" }),
-    Fruit = Window:AddTab({ Title = "Fruit", Icon = "cherry" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
-	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
-    Hop = Window:AddTab({ Title = "Hop", Icon = "wifi" }),
+    Main = Window:AddTab({ Title = "thực đơn", Icon = "home" }),
+    Setting = Window:AddTab({ Title = "cài đặt", Icon = "settings" }),
+    Stats = Window:AddTab({ Title = "chỉ số", Icon = "plus-circle" }),
+    Player = Window:AddTab({ Title = "người chơi", Icon = "baby" }),
+    Teleport = Window:AddTab({ Title = "đảo", Icon = "palmtree" }),
+    Fruit = Window:AddTab({ Title = "trái cây", Icon = "cherry" }),
+    Raid = Window:AddTab({ Title = "cuộc đột kích", Icon = "swords" }),
+    Race = Window:AddTab({ Title = "tộc V4", Icon = "chevrons-right" }),
+    Shop = Window:AddTab({ Title = "cửa hàng", Icon = "shopping-cart" }),
+	Misc = Window:AddTab({ Title = "đổi náy chủ", Icon = "list-plus" }),
+    Hop = Window:AddTab({ Title = "tìm máy chủ", Icon = "wifi" }),
 }
 local Options = Fluent.Options
 do
@@ -1991,7 +1991,7 @@ end
   function Tween2(P1)
     local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
     if Distance >= 1 then
-    Speed = 300
+    Speed = 350
     end
     game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear), {
       CFrame = P1
@@ -2070,13 +2070,13 @@ end
     local tweenfunc = {}
     local Distance = (RealTarget.Position - game:GetService("Players").LocalPlayer.Character:WaitForChild("HumanoidRootPart").Position)
         .Magnitude
-    if Distance < 1000 then
-        Speed = 315
-    elseif Distance >= 1000 then
-        Speed = 300
+    if Distance < 7000 then
+        Speed = 350
+    elseif Distance >= 7000 then
+        Speed = 350
     end
     if BypassTP then
-        if Distance > 3000 and not AutoNextIsland and not (game.Players.LocalPlayer.Backpack:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Character:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Sweet Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sweet Chalice")) and not (Name == "Fishman Commando" or Name == "Fishman Warrior") then
+        if Distance > 7000 and not AutoNextIsland and not (game.Players.LocalPlayer.Backpack:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Character:FindFirstChild("Special Microchip") or game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Hallow Essence") or game.Players.LocalPlayer.Character:FindFirstChild("Sweet Chalice") or game.Players.LocalPlayer.Backpack:FindFirstChild("Sweet Chalice")) and not (Name == "Fishman Commando" or Name == "Fishman Warrior") then
             pcall(function()
                 tween:Cancel()
                 fkwarp = false
@@ -2134,13 +2134,13 @@ function Tween(Pos)
     if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = false end
     pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/300, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
     tween:Play()
-    if Distance <= 300 then
+    if Distance <= 350 then
         tween:Cancel()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
     end
     if _G.StopTween == true then
         tween:Cancel()
-        _G.Clip = false
+        _G.Clip = true
     end
 end
 
@@ -2402,7 +2402,7 @@ return false
 end
 
 ---Method Farm
-Type1 = 1
+Type1 = 10
 spawn(function()
     while wait(.1) do
         if Type == 1 then
@@ -2437,7 +2437,7 @@ end)
 end
 ---Bypass Teleport
 function BTP(P)
-	repeat wait(0.5)
+	repeat wait(1)
 		game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
 		task.wait()
@@ -2525,20 +2525,20 @@ local Farming = Tabs.Main:AddSection("Farming")
 local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 
     local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
-        Title = "Select Fast Attack",
+        Title = "Fast Attack",
         Values = listfastattack,
         Multi = false,
         Default = 1,
     })
-    DropdownDelayAttack:SetValue("Fast Attack")
+    DropdownDelayAttack:SetValue("Super Fast Attack")
     DropdownDelayAttack:OnChanged(function(Value)
     _G.FastAttackFaiFao_Mode = Value
 	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
-		_G.Fast_Delay = 0.17
+		_G.Fast_Delay = 0.15
 	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.25
+		_G.Fast_Delay = 0.20
 	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.05
+		_G.Fast_Delay = 0.01
 	end
 end)
 
@@ -2911,7 +2911,7 @@ end)
 
 
       Tabs.Main:AddButton({
-        Title = "Redeem All Code",
+        Title = "nhập tất cả code",
         Description = "Redeem all code x2 exp",
         Callback = function()
             UseCode()
@@ -2940,7 +2940,7 @@ end)
 
 
     Tabs.Main:AddButton({
-        Title = "Fps Booster",
+        Title = "Fps giảm lag",
         Description = "Boost your fps",
         Callback = function()
             FPSBooster()
@@ -3543,7 +3543,7 @@ local boss = Tabs.Main:AddSection("Boss Farm")
       end)
 
       if Third_Sea then
-      local RoughSea = Tabs.Main:AddSection("🦊 Kitsune 🦊")
+      local RoughSea = Tabs.Main:AddSection("🦊 đảo cáo 🦊")
 
 
       local ToggleEspKitsune = Tabs.Main:AddToggle("ToggleEspKitsune", {Title = "Esp Kitsune Island", Default = false })

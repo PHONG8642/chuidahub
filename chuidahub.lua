@@ -22,7 +22,7 @@ repeat wait() until game:GetService("ReplicatedStorage").Effect.Container
 
 if not game:IsLoaded() then
 	local GameLoadGui = Instance.new("Message",workspace);
-	GameLoadGui.Text = 'Wait Game Loading';
+	GameLoadGui.Text = 'đang load hình';
 	game.Loaded:Wait();
 	GameLoadGui:Destroy();
 	task.wait(10);
@@ -112,16 +112,16 @@ _G.Settings = {
     ["Mob Health (%)"] = 15,
   },
   Configs = {
-    ["Double Quest"] = false,
-    ["Bypass TP"] = false,
+    ["Double Quest"] = true,
+    ["Bypass TP"] = true,
     ["Select Team"] = {
-      "Pirate"
+      "Marines"
     }, --{Pirate,Marine}
 
 
     ["Fast Attack"] = true,
     ["Select Weapon"] = {
-      "Sword"
+      "Mele"
     },
 
 
@@ -139,7 +139,7 @@ _G.Settings = {
 --[Mob Configs]
     ["Show Hitbox"] = false,
     ["Bring Mob"] = true,
-    ["Disabled Damage"] = false,
+    ["Disabled Damage"] = true,
 
   },
   Stat = {
@@ -154,8 +154,8 @@ _G.Settings = {
 
 --[Auto Redeem Code]
 
-    ["Enabled Auto Redeem Code"] = false,
-    ["Select Level Redeem Code"] = 1, --{Max : 2400}
+    ["Enabled Auto Redeem Code"] = true,
+    ["Select Level Redeem Code"] = 1, --{Max : 2550}
   },
 
   Misc = {
@@ -222,13 +222,13 @@ if readfile and writefile and isfile and isfolder then
 if not isfolder("ZenSave") then
 makefolder("ZenSave")
 end
-if not isfolder("ZenSave/Blox Fruits/") then
-makefolder("ZenSave/Blox Fruits/")
+if not isfolder("chuida/Blox Fruits/") then
+makefolder("chuida/Blox Fruits/")
 end
-if not isfile("ZenSave/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-writefile("ZenSave/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
+if not isfile("chuida/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+writefile("chuida/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
 else
-  local Decode = game:GetService("HttpService"):JSONDecode(readfile("ZenSave/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+  local Decode = game:GetService("HttpService"):JSONDecode(readfile("chuida/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
 for i,v in pairs(Decode) do
 _G.Settings[i] = v
 end
@@ -240,15 +240,15 @@ end
 
 function SaveSettings()
 if readfile and writefile and isfile and isfolder then
-if not isfile("ZenSave/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+if not isfile("chuida/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
 LoadSettings()
 else
-  local Decode = game:GetService("HttpService"):JSONDecode(readfile("ZenSave/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+  local Decode = game:GetService("HttpService"):JSONDecode(readfile("chuida/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
 local Array = {}
 for i,v in pairs(_G.Settings) do
 Array[i] = v
 end
-writefile("ZenSave/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
+writefile("chuida/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
 end
 else
   return warn("Status : Undetected Executor")
@@ -270,7 +270,7 @@ pcall(
   function()
   task.wait()
   if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main"):FindFirstChild("ChooseTeam") then
-  if _G.Team == "Pirate" then
+  if _G.Team == "Marines" then
   for r, v in pairs(
     getconnections(
       game:GetService("Players").LocalPlayer.PlayerGui.Main.ChooseTeam.Container.Pirates.Frame.ViewportFrame.TextButton.Activated
